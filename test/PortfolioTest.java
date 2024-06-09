@@ -48,7 +48,7 @@ public class PortfolioTest {
    */
   @Test
   public void testAddStock() {
-    portfolio.addStock(apple, 10);
+    portfolio.addStock(apple, 10, LocalDate.now());
     assertTrue(portfolio.getStocks().containsKey(apple));
     assertEquals(10, (int) portfolio.getStocks().get(apple));
 
@@ -61,7 +61,7 @@ public class PortfolioTest {
    */
   @Test(expected = IllegalArgumentException.class)
   public void testAddNegativeQuantity() {
-    portfolio.addStock(apple, -5);
+    portfolio.addStock(apple, -5, LocalDate.now());
   }
 
 
@@ -70,10 +70,10 @@ public class PortfolioTest {
    */
   @Test
   public void testRemoveStock() {
-    portfolio.addStock(apple, 10);
-    portfolio.removeStock(apple, 5);
+    portfolio.addStock(apple, 10, LocalDate.now());
+    portfolio.removeStock(apple, 5, LocalDate.now());
     assertEquals(5, (int) portfolio.getStocks().get(apple));
-    portfolio.removeStock(apple, 5);
+    portfolio.removeStock(apple, 5, LocalDate.now());
     assertFalse(portfolio.getStocks().containsKey(apple));
   }
 
@@ -82,7 +82,8 @@ public class PortfolioTest {
    */
   @Test(expected = IllegalArgumentException.class)
   public void testRemoveNegativeQuantity() {
-    portfolio.removeStock(apple, -5);
+    portfolio.removeStock(apple,
+            -5, LocalDate.now());
   }
 
   /**
@@ -90,10 +91,10 @@ public class PortfolioTest {
    */
   @Test
   public void testCalculatePortfolioValue() {
-    portfolio.addStock(apple, 1);
+    portfolio.addStock(apple, 1, LocalDate.now());
     assertEquals((Double) 173.5,
             portfolio.calculatePortfolioValue(LocalDate.of(2024, 6, 1)));
-    portfolio.addStock(google, 1);
+    portfolio.addStock(google, 1, LocalDate.now());
     assertEquals((Double) 347.0,
             portfolio.calculatePortfolioValue(LocalDate.of(2024, 6, 1)));
   }
