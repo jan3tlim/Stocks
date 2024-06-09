@@ -12,7 +12,7 @@ public class CalculateGorL implements StockInformationCommands {
   /**
    * Constructs a CalculateGorL instance with the specified view and scanner.
    *
-   * @param vd the view interface for user interactions
+   * @param vd the v iew interface for user interactions
    * @param in the scanner for user input
    */
   public CalculateGorL(IView vd, Scanner in) {

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Stockss4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/production/Stockss/javadoc.zip!/" />
+      <root url="jar://$PROJECT_DIR$/out/production/Stockss/Stockss.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
