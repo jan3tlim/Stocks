@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 import java.util.Scanner;
 
+
 /**
  * The CalculateGorL class implements the StockInformationCommands interface to provide
  * functionality for calculating the gain or loss of a stock over a specified time period.
