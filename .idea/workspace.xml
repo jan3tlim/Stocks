@@ -22,26 +22,41 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
-
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.PortfolioTest.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "janet",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-203781b8" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-9b16c6e2" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="296a147c-7714-47c7-8d4b-47bbb5a1ad7c" name="Changes" comment="" />
-      <created>1717970009697</created>
+      <changelist id="7512828c-2e95-48cd-9d5e-42ea68aaa08b" name="Changes" comment="" />
+      <created>1717969809806</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1717970009697</updated>
-      <workItem from="1717970010859" duration="2153000" />
+      <updated>1717969809806</updated>
+      <workItem from="1717969814796" duration="363000" />
     </task>
     <servers />
   </component>
