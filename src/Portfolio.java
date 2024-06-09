@@ -38,17 +38,17 @@ public class Portfolio implements IPortfolio {
    * @param quantity the quantity of the stock to add
    */
   @Override
-  public void addStock(IStock stock, int quantity) {
+  public void addStock(IStock stock, int quantity, LocalDate currentDate) {
     if (quantity < 0) {
       throw new IllegalArgumentException("You cannot add zero or negative stocks.");
     }
     if (this.stocks.containsKey(stock)) {
       int currentQuantity = this.stocks.get(stock);
       this.stocks.put(stock, currentQuantity + quantity);
-      this.datesAdded.put(stock, LocalDate.now());
+      this.datesAdded.put(stock, currentDate);
     } else {
       this.stocks.put(stock, quantity);
-      this.datesAdded.put(stock, LocalDate.now());
+      this.datesAdded.put(stock, currentDate);
     }
   }
 
@@ -62,7 +62,7 @@ public class Portfolio implements IPortfolio {
    * @param quantity the quantity of the stock to remove
    */
   @Override
-  public void removeStock(IStock stock, int quantity) {
+  public void removeStock(IStock stock, int quantity, LocalDate currentDate) {
     if (quantity < 0) {
       throw new IllegalArgumentException("You cannot remove zero or negative stocks.");
     }
@@ -70,10 +70,10 @@ public class Portfolio implements IPortfolio {
       int currentQuantity = this.stocks.get(stock);
       if (currentQuantity <= quantity) {
         this.stocks.remove(stock);
-        this.datesAdded.remove(stock, LocalDate.now());
+        this.datesAdded.remove(stock, currentDate);
       } else {
         this.stocks.put(stock, currentQuantity - quantity);
-        this.datesAdded.put(stock, LocalDate.now());
+        this.datesAdded.put(stock, currentDate);
       }
     }
   }
