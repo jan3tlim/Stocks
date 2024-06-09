@@ -11,16 +11,18 @@ public interface IPortfolio {
    *
    * @param stock    the stock to be added
    * @param quantity the quantity of the stock to be added
+   * @param currentDate
    */
-  void addStock(IStock stock, int quantity);
+  void addStock(IStock stock, int quantity, LocalDate currentDate);
 
   /**
    * Removes a specified quantity of a stock from the portfolio.
    *
    * @param stock    the stock to be removed
    * @param quantity the quantity of the stock to be removed
+   * @param currentDate
    */
-  void removeStock(IStock stock, int quantity);
+  void removeStock(IStock stock, int quantity, LocalDate currentDate);
 
   /**
    * Calculates the total value of the portfolio on the a certain date.
