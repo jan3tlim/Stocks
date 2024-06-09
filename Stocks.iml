@@ -8,11 +8,5 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Stockss4" level="project" />
-    <orderEntry type="library" name="Stockss3" level="project" />
-    <orderEntry type="library" name="res" level="project" />
-    <orderEntry type="library" name="Stockss5" level="project" />
-    <orderEntry type="library" name="Stockss2" level="project" />
-    <orderEntry type="library" name="Stockss1" level="project" />
   </component>
 </module>
