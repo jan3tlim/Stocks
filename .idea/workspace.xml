@@ -5,12 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="296a147c-7714-47c7-8d4b-47bbb5a1ad7c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/IStock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IStock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CalculateGorL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CalculateGorL.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -52,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1717970009697</updated>
-      <workItem from="1717970010859" duration="2153000" />
+      <workItem from="1717970010859" duration="4655000" />
     </task>
     <servers />
   </component>
