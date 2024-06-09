@@ -275,8 +275,8 @@ public class TextViewTest {
     assertEquals(expectedOutput, outputStream.toString());
     Stock stock1 = new Stock("AAPL", new TreeMap<>());
     Stock stock2 = new Stock("GOOG", new TreeMap<>());
-    portfolio.addStock(stock1, 10);
-    portfolio.addStock(stock2, 5);
+    portfolio.addStock(stock1, 10, LocalDate.now());
+    portfolio.addStock(stock2, 5, LocalDate.now());
 
     textView.showSpecificPortfolio("PortfolioWithStocks", client);
 
