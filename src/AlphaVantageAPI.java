@@ -17,7 +17,7 @@ import java.util.TreeMap;
  * and retrieving historical stock prices.
  */
 public class AlphaVantageAPI {
-  public final String API_KEY = "W9LUUGRA79G7VO0S";
+  public final String API_KEY = "WMDORK6BEVBQ7K7S";
 
   /**
    * Creates a URL for accessing Alpha Vantage API data.
