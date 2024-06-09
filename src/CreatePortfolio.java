@@ -65,7 +65,10 @@ public class CreatePortfolio implements IStockControllerCommands {
         }
         TreeMap<LocalDate, Double> stockHistory = a.fetchStockHistory(
                 a.makeCSVFile("TIME_SERIES_DAILY", t));
-        p.addStock(new Stock(t, stockHistory), Integer.parseInt(s));
+        v.writeMessage("What's today's date?");
+        Scanner sc = new Scanner(System.in);
+        LocalDate l = v.provideDate(sc);
+        p.addStock(new Stock(t, stockHistory), Integer.parseInt(s), l);
         v.writeMessage("Successfully added " + s + " " + t + " stocks in " +
                 p.getName() + "\n");
       }
