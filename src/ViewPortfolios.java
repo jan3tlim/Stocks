@@ -54,7 +54,7 @@ public class ViewPortfolios implements IStockControllerCommands {
             v.viewExistingPortfolios(user);
           }
         }
-        Portfolio p = user.getPortfolios().get(s);
+        IPortfolio p = user.getPortfolios().get(s);
         v.showSpecificPortfolio(s, user);
         v.writeMessage("To check the value of your portfolio on a certain date, \n");
         Scanner sc = new Scanner(System.in);

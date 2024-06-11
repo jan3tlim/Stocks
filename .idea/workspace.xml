@@ -5,7 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7512828c-2e95-48cd-9d5e-42ea68aaa08b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/DirectoryCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AAPL_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/AAPL_data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/IClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/IClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/IPortfolio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/IPortfolio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/ManagePortfolioMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/ManagePortfolioMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/MockClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/MockClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/Portfolio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/Portfolio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/StockController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/StockController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/TextView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/TextView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/ViewPortfolios.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/ViewPortfolios.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Stocks/PortfolioTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Stocks/PortfolioTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IPortfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IPortfolio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ManagePortfolioMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManagePortfolioMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MockClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MockClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Portfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Portfolio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SmartPortfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SmartPortfolio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StockController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ViewPortfolios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewPortfolios.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/PortfolioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PortfolioTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,25 +50,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.PortfolioTest.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;janet&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ProgramMainStock.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.PortfolioTest.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "janet",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

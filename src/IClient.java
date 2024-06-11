@@ -18,4 +18,7 @@ public interface IClient {
    * @return the newly created portfolio
    */
   Portfolio createPortfolio(String portfolioName);
+
+  void savePortfolios(String directory);
+  void loadPortfolios(String directory);
 }

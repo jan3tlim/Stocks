@@ -52,8 +52,7 @@ public class PortfolioTest {
     assertTrue(portfolio.getStocks().containsKey(apple));
     assertEquals(10, (int) portfolio.getStocks().get(apple));
 
-    assertTrue(portfolio.getDatesAdded().containsKey(apple));
-    assertEquals(LocalDate.now(), portfolio.getDatesAdded().get(apple));
+    assertTrue(portfolio.getStocks().containsKey(apple));
   }
 
   /**
@@ -106,6 +105,7 @@ public class PortfolioTest {
   public void testCalculatePortfolio() {
     portfolio.calculatePortfolioValue(LocalDate.of(2024, -6, 1));
   }
+
 
 
 }

@@ -1,8 +1,16 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.TreeMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * The Portfolio class represents a collection of stocks owned by a client.
@@ -14,6 +22,7 @@ public class Portfolio implements IPortfolio {
   private Client owner;
   private String name;
 
+  private TreeMap<LocalDate, Portfolio> versions;
   private TreeMap<IStock, LocalDate> datesAdded;
 
   /**
@@ -26,6 +35,7 @@ public class Portfolio implements IPortfolio {
     this.stocks = new HashMap<IStock, Integer>();
     this.owner = owner;
     this.name = portfolioName;
+    this.versions = new TreeMap<LocalDate, Portfolio>();
     this.datesAdded = new TreeMap<IStock, LocalDate>();
   }
 
@@ -50,6 +60,7 @@ public class Portfolio implements IPortfolio {
       this.stocks.put(stock, quantity);
       this.datesAdded.put(stock, currentDate);
     }
+    this.versions.put(currentDate, this.clone());
   }
 
   /**
@@ -76,6 +87,10 @@ public class Portfolio implements IPortfolio {
         this.datesAdded.put(stock, currentDate);
       }
     }
+    // Create a snapshot of the current portfolio state
+    this.versions.put(currentDate, this.clone());
+
+
   }
 
   /**
@@ -86,9 +101,13 @@ public class Portfolio implements IPortfolio {
    */
   @Override
   public Double calculatePortfolioValue(LocalDate currentDate) {
+    IPortfolio version = getVersionForDate(currentDate);
     double totalValue = 0.0;
+    if (version == null) {
+      return totalValue;
+    }
 
-    for (Map.Entry<IStock, Integer> entry : stocks.entrySet()) {
+    for (Map.Entry<IStock, Integer> entry : version.getStocks().entrySet()) {
       IStock stock = entry.getKey();
       int quantity = entry.getValue();
       Double price = stock.getClosingPrice(currentDate);
@@ -96,6 +115,32 @@ public class Portfolio implements IPortfolio {
     }
 
     return totalValue;
+  }
+
+  /**
+   * Returns a clone of the current version of IPortfolio
+   * @return the cloned Portfolio
+   */
+  @Override
+  public Portfolio clone() {
+    Portfolio cloned = new Portfolio(this.name, this.owner);
+    cloned.stocks = new HashMap<>(this.stocks); // Create a new copy
+    return cloned;
+  }
+
+  /**
+   * Returns the version of the Portfolio on the given date
+   *
+   * @param date the date
+   * @return the version of the Portfolio on the given date
+   */
+  @Override
+  public Portfolio getVersionForDate(LocalDate date) {
+    Map.Entry<LocalDate, Portfolio> entry = versions.floorEntry(date);
+    if (entry != null) {
+      return entry.getValue();
+    }
+    return null;
   }
 
   /**
@@ -119,13 +164,23 @@ public class Portfolio implements IPortfolio {
   }
 
   /**
-   * Returns the dates when the stocks were added to the portfolio.
+   * Returns the version history of the portfolio
    *
-   * @return a TreeMap containing the stocks and their dates of addition
+   * @return a TreeMap containing the versions of the Portfolio and their respective date
    */
   @Override
-  public TreeMap<IStock, LocalDate> getDatesAdded() {
-    return datesAdded;
+  public TreeMap<LocalDate, Portfolio> getVersions() {
+    return versions;
+  }
+
+  /**
+   * Returns the portfolio's owner.
+   *
+   * @return the Client that owns the portfolio
+   */
+  @Override
+  public Client getOwner(){
+    return owner;
   }
 
   /**
@@ -169,5 +224,73 @@ public class Portfolio implements IPortfolio {
             "\n{" + s +
             '}';
   }
+
+
+  @Override
+  public void savePortfolio(String filename) {
+
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
+      writer.write("{\n");
+      writer.write(String.format("\"name\": \"%s\",\n",this.name));
+      writer.write("\"stocks\": [\n");
+
+
+      int i = 0;
+      for (Map.Entry<IStock, Integer> entry : stocks.entrySet()) {
+        writer.write(String.format("  {\"ticker\": \"%s\", \"quantity\": %d, \"dateAdded\": \"%s\"}",
+                entry.getKey().getTicker(), entry.getValue(),datesAdded.get(entry.getKey()).format(formatter)));
+
+        i = i + 1;
+        if (i < stocks.size() - 1) {
+          writer.write(",\n");
+        }
+      }
+      writer.write("\n]\n");
+      writer.write("}\n");
+    }catch (IOException e){
+      e.fillInStackTrace();
+    }
+
+  }
+
+  @Override
+  public void loadPortfolio(String filename) {
+    Portfolio portfolio = null;
+    String name = null;
+
+    Pattern namePattern = Pattern.compile("\"name\":\\s*\"([^\"]+)\"");
+    Pattern stockPattern = Pattern.compile("\\{\"ticker\":\\s*\"([^\"]+)\",\\s*\"quantity\":\\s*(\\d+),\\s*\"dateAdded\":\\s*\"(\\d{4}-\\d{2}-\\d{2})\"\\}");
+
+    try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+      String line;
+      StringBuilder jsonBuilder = new StringBuilder();
+      while ((line = reader.readLine()) != null) {
+        jsonBuilder.append(line.trim());
+      }
+      String json = jsonBuilder.toString();
+
+      Matcher nameMatcher = namePattern.matcher(json);
+      if (nameMatcher.find()) {
+        this.name = nameMatcher.group(1);
+
+      }
+
+      Matcher stockMatcher = stockPattern.matcher(json);
+      AlphaVantageAPI api = new AlphaVantageAPI();
+      while (stockMatcher.find()) {
+        IStock stock = api.makeStock(stockMatcher.group(1));
+        int quantity = Integer.parseInt(stockMatcher.group(2));
+        LocalDate dateAdded = LocalDate.parse(stockMatcher.group(3), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        this.stocks.put(stock,quantity);
+        this.datesAdded.put(stock,dateAdded);
+      }
+    } catch (IOException e){
+      e.fillInStackTrace();
+    }
+
+  }
+
 
 }

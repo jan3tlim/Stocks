@@ -132,7 +132,6 @@ public class TextView implements IView {
   public void showSpecificPortfolio(String name, Client c) {
     Portfolio p = c.getPortfolios().get(name);
     messageAppend(p.toString());
-    showAddStocks();
   }
 
   /**
