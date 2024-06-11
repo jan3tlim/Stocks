@@ -54,12 +54,14 @@ public class ManagePortfolioMenu implements IStockControllerCommands {
             in.next();
             break;
         }
-        if (cmd != null && !quit) {
+        if (cmd != null) {
           cmd.goController(m);
         }
+        user.savePortfolios("runtime_data");
       } catch (IllegalArgumentException e) {
         v.writeMessage("Error: " + e.getMessage() + System.lineSeparator());
       }
     }
   }
+
 }

@@ -1,4 +1,6 @@
+import java.io.File;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * The Client class represents a client who can manage multiple portfolios.
@@ -22,7 +24,7 @@ public class Client implements IClient {
    * Returns the collection of portfolios managed by this client.
    *
    * @return a HashMap containing the client's portfolios, where the keys are portfolio names
-   *            and the values are Portfolio objects
+   * and the values are Portfolio objects
    */
   @Override
   public HashMap<String, Portfolio> getPortfolios() {
@@ -52,4 +54,29 @@ public class Client implements IClient {
     return name;
   }
 
+  @Override
+  public void savePortfolios(String directory) {
+    for (Map.Entry<String, Portfolio> entry : portfolios.entrySet()) {
+      String filename = directory + "/" + entry.getKey().replace(" ", "_") + ".json";
+      entry.getValue().savePortfolio(filename);
+    }
+
+  }
+
+  @Override
+  public void loadPortfolios(String directory) {
+    File dir = new File(directory);
+    File[] files = dir.listFiles((dir1, name) -> name.endsWith(".json"));
+    if (files != null) {
+      for (File file : files) {
+        String filename = file.getName();
+        String portfolioName = filename.substring(0, filename.length() - 5).replace("_", " ");
+        Portfolio portfolio = new Portfolio(portfolioName, this);
+        portfolio.loadPortfolio(filename);
+        portfolios.put(portfolioName, portfolio);
+      }
+    }
+
+
+  }
 }

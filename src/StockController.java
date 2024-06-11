@@ -29,17 +29,22 @@ public class StockController implements IStockController {
    */
   @Override
   public void goController() {
+
     IModel md = new Model();
     Scanner in = new Scanner(this.in);
     IView vd = new TextView(out);
 
     boolean quit = false;
     while (!quit) {
+      String dirPath = "runtime_data";
+      DirectoryCreator.ensureDirectoryExists(dirPath);
+//      IClient user = new Client("user");
+      Client user = new Client("user");
+      user.loadPortfolios(dirPath);
       IStockControllerCommands cmd = null;
       vd.welcomeScreen();
       vd.showMainMenu();
       String s = in.next();
-      Client user = new Client("user");
       try {
         switch (s) {
           case "q":

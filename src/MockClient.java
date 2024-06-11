@@ -23,4 +23,14 @@ public class MockClient implements IClient {
     portfolios.put(portfolioName, portfolio);
     return portfolio;
   }
+
+  @Override
+  public void savePortfolios(String directory) {
+
+  }
+
+  @Override
+  public void loadPortfolios(String directory) {
+
+  }
 }

@@ -1,0 +1,6 @@
+{
+"name": "tech",
+"stocks": [
+  {"ticker": "AAPL", "quantity": 7, "dateAdded": "2023-02-06"}
+]
+}
