@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 /**
  * The ViewPortfolios class handles the user interactions for viewing and
@@ -66,5 +67,101 @@ public class ViewPortfolios implements IStockControllerCommands {
       cmd.goController(m);
     }
   }
+
+//  private void viewPMenu(IPortfolio p){
+//    boolean quit = false;
+//    StockInformationCommands sid = null;
+//    while (!quit) {
+//      v.writeMessage("\n");
+//      v.goBack();
+//      v.writeMessage("Choose an option");
+//      v.writeMessage("\n");
+//      v.writeMessage("1. Add Stocks\n" +
+//              "2. Remove Stocks\n" +
+//              "3. Calculate Total Portfolio Value");
+//      String s = in.next();
+//      try {
+//        switch (s) {
+//          case "1":
+////            sid = new ClosingPrice(vd, in);
+//            v.showAddStocks();
+//            v.writeMessage("Ticker:");
+//            s = in.next();
+//            while (!a.tickerCSVToList().contains(s)) {
+//              v.showOptionError();
+//              v.writeMessage("Error: Invalid stock symbol: " + s);
+//              v.writeMessage("Ticker:");
+//              s = in.next();
+//            }
+//            String t = s;
+//            v.writeMessage("Quantity:");
+//            s = in.next();
+//            while (!s.matches("[0-9]+")) {
+//              v.showOptionError();
+//              v.writeMessage("Quantity:");
+//              s = in.next();
+//            }
+//            TreeMap<LocalDate, Double> stockHistory = a.fetchStockHistory(
+//                    a.makeCSVFile("TIME_SERIES_DAILY", t));
+//            v.writeMessage("What's today's date?");
+//            Scanner sc = new Scanner(System.in);
+//            LocalDate l = v.provideDate(sc);
+//            p.addStock(new Stock(t, stockHistory), Integer.parseInt(s), l);
+//            v.writeMessage("Successfully added " + s + " " + t + " stocks in " +
+//                    p.getName() + "\n");
+//            break;
+//          case "2":
+////            sid = new CalculateGorL(vd, in);
+//            v.writeMessage("Ticker:");
+//            s = in.next();
+//            while (p.getStocks().containsKey(s))
+//            while (!a.tickerCSVToList().contains(s)) {
+//              v.showOptionError();
+//              v.writeMessage("Error: Invalid stock symbol: " + s);
+//              v.writeMessage("Ticker:");
+//              s = in.next();
+//            }
+//            t = s;
+//            v.writeMessage("Quantity:");
+//            s = in.next();
+//            while (!s.matches("[0-9]+")) {
+//              v.showOptionError();
+//              v.writeMessage("Quantity:");
+//              s = in.next();
+//            }
+//            stockHistory = a.fetchStockHistory(
+//                    a.makeCSVFile("TIME_SERIES_DAILY", t));
+//            v.writeMessage("What's today's date?");
+//            sc = new Scanner(System.in);
+//            l = v.provideDate(sc);
+//            p.removeStock(new Stock(t, stockHistory), Integer.parseInt(s), l);
+//            v.writeMessage("Successfully added " + s + " " + t + " stocks in " +
+//                    p.getName() + "\n");
+//            break;
+//          case "3":
+////            sid = new Moving(vd, in);
+//            v.writeMessage("To check the value of your portfolio on a certain date, \n");
+//            sc = new Scanner(System.in);
+//            l = v.provideDate(sc);
+//            v.writeMessage("The value of your portfolio is " + p.calculatePortfolioValue(l));
+//            break;
+//          case "b":
+//            quit = true;
+//            break;
+//          default:
+//            v.showOptionError();
+//            v.writeMessage("Error: Invalid Portfolio Name: " + s);
+//            in.next();
+//            break;
+//        }
+//        if (sid != null && !quit) {
+//          sid.goController(s);
+//        }
+//      } catch (IllegalArgumentException e) {
+//        v.writeMessage("Error: " + e.getMessage() + System.lineSeparator());
+//      }
+//    }
+//  }
+
 
 }

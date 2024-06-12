@@ -131,7 +131,7 @@ public class TextView implements IView {
   @Override
   public void showSpecificPortfolio(String name, Client c) {
     Portfolio p = c.getPortfolios().get(name);
-    messageAppend(p.toString());
+    messageAppend(p.printStocks(LocalDate.of(2023, 2, 3)));
   }
 
   /**

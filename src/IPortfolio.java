@@ -1,3 +1,4 @@
+import java.io.File;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.TreeMap;
@@ -44,14 +45,8 @@ public interface IPortfolio {
    *
    * @return the HashMap of stocks in the portfolio
    */
-  HashMap<IStock, Integer> getStocks();
+  HashMap<IStock, Integer> getStocks(LocalDate l);
 
-  /**
-   * Returns the portfolio's version history.
-   *
-   * @return the TreeMap of past portfolio versions
-   */
-  TreeMap<LocalDate, Portfolio> getVersions();
 
   /**
    * Returns the portfolio's owner.
@@ -60,22 +55,12 @@ public interface IPortfolio {
    */
   Client getOwner();
 
-  /**
-   * Returns a clone of the current version of IPortfolio
-   *
-   * @return the cloned Portfolio
-   */
-  IPortfolio clone();
+  Double calculateStockValue(IStock s, LocalDate currentDate);
+  String printStocks(LocalDate l);
 
-  /**
-   * Returns the version of the Portfolio on the given date
-   *
-   * @param date the date
-   * @return the version of the Portfolio on the given date
-   */
-  IPortfolio getVersionForDate(LocalDate date);
+  String performanceOverTime(LocalDate start, LocalDate end);
 
   void savePortfolio(String filename);
-  void loadPortfolio(String filename);
+  void loadPortfolio(File flile);
 
 }

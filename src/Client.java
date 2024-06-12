@@ -72,7 +72,7 @@ public class Client implements IClient {
         String filename = file.getName();
         String portfolioName = filename.substring(0, filename.length() - 5).replace("_", " ");
         Portfolio portfolio = new Portfolio(portfolioName, this);
-        portfolio.loadPortfolio(filename);
+        portfolio.loadPortfolio(file);
         portfolios.put(portfolioName, portfolio);
       }
     }
