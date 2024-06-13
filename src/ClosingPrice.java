@@ -36,7 +36,7 @@ public class ClosingPrice implements StockInformationCommands {
               + "to know the stock " + s.getTicker() + " closing price\n");
       try {
         vd.writeMessage("\nthe closing price of the give date is  --- " +
-                vd.doubleToString(s.getClosingPrice(vd.provideDate(in))) + "\n\n");
+                String.format("$%.2f",s.getClosingPrice(vd.provideDate(in))) + "\n\n");
       } catch (IllegalArgumentException e) {
         vd.writeMessage("Error: " + e.getMessage() + System.lineSeparator());
       }

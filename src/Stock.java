@@ -1,4 +1,9 @@
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalUnit;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.NavigableMap;
 import java.util.TreeMap;
@@ -206,6 +211,94 @@ public class Stock implements IStock, Comparable<Stock> {
       return givenDate.minusDays(2);
     }
     return givenDate;
+  }
+
+  public String performanceOverTime(LocalDate start, LocalDate end) {
+    if (!end.isAfter(start)) {
+      throw new IllegalArgumentException("Your end date must come after your start date.");
+    }
+    if (!hasPriceData(start)) {
+      throw new IllegalArgumentException("No data available for the start date: " + start);
+    }
+    if (!hasPriceData(end)) {
+      throw new IllegalArgumentException("No data available for the end date: " + end);
+    }
+
+    StringBuilder chart = new StringBuilder();
+    chart.append("Performance of stock '").append(this.getTicker()).append("' from ")
+            .append(start).append(" to ").append(end).append("\n");
+
+    long totalDays = ChronoUnit.DAYS.between(start, end);
+    List<LocalDate> dates = new ArrayList<>();
+
+    // Determine the interval for the dates
+    TemporalUnit interval;
+    DateTimeFormatter formatter;
+    if (totalDays <= 5) {
+      throw new IllegalArgumentException("Time span too short");
+    } else if (totalDays <= 30) {
+      interval = ChronoUnit.DAYS;
+      formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
+    } else if (totalDays <= 730) {
+      interval = ChronoUnit.MONTHS;
+      formatter = DateTimeFormatter.ofPattern("MMM yyyy");
+    } else {
+      interval = ChronoUnit.YEARS;
+      formatter = DateTimeFormatter.ofPattern("yyyy");
+    }
+
+    // Generate the dates based on the interval
+    LocalDate current = start;
+    while (!current.isAfter(end)) {
+      if (hasPriceData(current)) {
+        dates.add(current);
+      }
+      if (interval == ChronoUnit.DAYS) {
+        current = current.plusDays(1);
+      } else if (interval == ChronoUnit.MONTHS) {
+        current = current.plusMonths(1);
+      } else if (interval == ChronoUnit.YEARS) {
+        current = current.plusYears(1);
+      }
+    }
+
+    if (dates.isEmpty()) {
+      return "No data available for the given date range.";
+    }
+
+    Map<LocalDate, Double> values = new HashMap<>();
+    double maxValue = Double.MIN_VALUE;
+    for (LocalDate date : dates) {
+      double value = getClosingPrice(date);
+      values.put(date, value);
+      if (value > maxValue) {
+        maxValue = value;
+      }
+    }
+
+    int maxAsterisks = 50;
+    double scale = maxValue / maxAsterisks;
+    if (scale == 0) {
+      scale = 1;
+    }
+
+    for (LocalDate date : dates) {
+      double value = values.get(date);
+      int numAsterisks = (int) (value / scale);
+      chart.append(date.format(formatter)).append(": ").append("*".repeat(numAsterisks)).append("\n");
+    }
+
+    chart.append("Scale: * = ").append(scale).append(" units\n");
+    return chart.toString();
+  }
+
+  private boolean hasPriceData(LocalDate date) {
+    try {
+      Double price = this.getClosingPrice(date);
+      return price != null && price > 0.0;
+    } catch (IllegalArgumentException e) {
+      return false; // If getClosingPrice throws an exception, we consider it as no information available.
+    }
   }
 
 

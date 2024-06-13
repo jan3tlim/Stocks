@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.TreeMap;
 
@@ -7,7 +8,7 @@ import java.util.TreeMap;
  * It allows the user to specify the name of the new portfolio and add stocks to it.
  */
 public class CreatePortfolio implements IStockControllerCommands {
-  Client user;
+  StockController user;
   IView v;
   private Scanner in;
   IStockControllerCommands cmd = null;
@@ -18,9 +19,8 @@ public class CreatePortfolio implements IStockControllerCommands {
    *
    * @param v    the view to interact with the user
    * @param in   the scanner for user input
-   * @param user the client who is creating a new portfolio
    */
-  public CreatePortfolio(IView v, Scanner in, Client user) {
+  public CreatePortfolio(IView v, Scanner in, StockController user) {
     this.v = v;
     this.user = user;
     this.in = in;
@@ -35,46 +35,48 @@ public class CreatePortfolio implements IStockControllerCommands {
    * @param m the model to operate on
    */
   public void goController(IModel m) {
-    v.showCreatePortfolio();
-    String s = in.next();
-    Portfolio p = user.createPortfolio(s);
+
     boolean quit = false;
     while (!quit) {
       v.goBack();
+      v.showCreatePortfolio();
+
+      String s = in.next();
+      Client c = user.getUser();
+      Portfolio p = c.createPortfolio(s);
+      user.setClient(c);
+      if(!Objects.equals(s, "b")){
+      v.goBack();
       v.showAddStocks();
-      s = in.next();
+      v.writeMessage("Ticker:");
+      s = in.next();}
       if (s.equals("b")) {
         quit = true;
-        cmd = new ManagePortfolioMenu(v, in, user);
       } else {
-        v.writeMessage("Ticker:");
-        s = in.next();
-        while (!a.tickerCSVToList().contains(s)) {
-          v.showOptionError();
-          v.writeMessage("Error: Invalid stock symbol: " + s);
-          v.writeMessage("Ticker:");
+        String t ="";
+        while (t.isEmpty()){
+
           s = in.next();
+          if (!a.tickerCSVToList().contains(s)) {
+            v.showOptionError();
+            v.writeMessage("Error: Invalid stock symbol: " + s);
+          }else{
+            t = s;}
         }
-        String t = s;
-        v.writeMessage("Quantity:");
-        s = in.next();
-        while (!s.matches("[0-9]+")) {
-          v.showOptionError();
           v.writeMessage("Quantity:");
-          s = in.next();
-        }
+          int quant = v.getValidInteger(in);
         TreeMap<LocalDate, Double> stockHistory = a.fetchStockHistory(
                 a.makeCSVFile("TIME_SERIES_DAILY", t));
         v.writeMessage("What's today's date?");
         Scanner sc = new Scanner(System.in);
         LocalDate l = v.provideDate(sc);
-        p.addStock(new Stock(t, stockHistory), Integer.parseInt(s), l);
+        p.addStock(new Stock(t, stockHistory), quant, l);
         v.writeMessage("Successfully added " + s + " " + t + " stocks in " +
                 p.getName() + "\n");
       }
-      if (cmd != null) {
-        cmd.goController(m);
-      }
+
+
+
     }
   }
 }

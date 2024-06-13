@@ -69,7 +69,7 @@ public class MockView implements IView {
   }
 
   @Override
-  public void showSpecificPortfolio(String name, Client c) {
+  public void showSpecificPortfolio(IPortfolio p, LocalDate l) {
     messageAppend("");
   }
 
@@ -106,5 +106,10 @@ public class MockView implements IView {
   @Override
   public void getListCrossovers(ArrayList<LocalDate> a) {
     messageAppend("");
+  }
+
+  @Override
+  public void showPortfolioOptions() {
+
   }
 }

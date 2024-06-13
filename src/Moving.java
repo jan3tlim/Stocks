@@ -41,7 +41,7 @@ public class Moving implements StockInformationCommands {
               + "to know the stock " + s.getTicker() + " Moving average of\n");
       try {
         vd.writeMessage("\nthe x-day moving average of the given date and x-day is  --- "
-                + vd.doubleToString(s.calculateXDayMovingAverage(vd.provideDate(in), x)) + "\n\n");
+                + String.format("$%.2f",s.calculateXDayMovingAverage(vd.provideDate(in), x)) + "\n\n");
       } catch (IllegalArgumentException e) {
         vd.writeMessage("Error: " + e.getMessage() + System.lineSeparator());
       }

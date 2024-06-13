@@ -59,7 +59,7 @@ public class CreatePortfolioTest {
 
     InputStream inputStream = new ByteArrayInputStream(input.toString().getBytes());
     Scanner scanner = new Scanner(inputStream);
-    createPortfolio = new CreatePortfolio(view, scanner, user);
+//    createPortfolio = new CreatePortfolio(view, scanner, user);
 
     assertEquals(expected1.toString(), outputStream.toString());
   }

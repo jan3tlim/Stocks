@@ -63,7 +63,7 @@ public class ManagePortfolioMenuTest {
 
     InputStream inputStream = new ByteArrayInputStream(input.toString().getBytes());
     Scanner scanner = new Scanner(inputStream);
-    managePortfolioMenu = new ManagePortfolioMenu(view, scanner, user);
+//    managePortfolioMenu = new ManagePortfolioMenu(view, scanner, user);
 
 
     assertEquals(expected1.toString(), outputStream.toString());
@@ -104,7 +104,7 @@ public class ManagePortfolioMenuTest {
 
     InputStream inputStream = new ByteArrayInputStream(input.toString().getBytes());
     Scanner scanner = new Scanner(inputStream);
-    managePortfolioMenu = new ManagePortfolioMenu(view, scanner, user);
+//    managePortfolioMenu = new ManagePortfolioMenu(view, scanner, user);
 
 
     assertEquals(expected1.toString(), outputStream.toString());

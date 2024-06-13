@@ -5,28 +5,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7512828c-2e95-48cd-9d5e-42ea68aaa08b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AMZN_data.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runtime_data/tech2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runtime_data/tech3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runtime_data/tech5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SH_data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/APIInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IAlphaVantageAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IPortfolioOptions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MockPortfolio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PortfolioOptions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/PortfolioOptionsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AAPL_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/AAPL_data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AMZN_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/AMZN_data.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GOOG_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GOOG_data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/AlphaVantageAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/AlphaVantageAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/CalculateGorL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/CalculateGorL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/ClosingPrice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/ClosingPrice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/CreatePortfolio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/CreatePortfolio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/DirectoryCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/DirectoryCreator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Stocks/IPortfolio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/IPortfolio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/IView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/IView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/ManagePortfolioMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/ManagePortfolioMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/MockView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/MockView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/Moving.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/Moving.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Stocks/Portfolio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/Portfolio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/SmartPortfolio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/Stock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/Stock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/StockController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/StockController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Stocks/TextView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/TextView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Stocks/ViewPortfolios.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/ViewPortfolios.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Stocks/CreatePortfolioTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Stocks/CreatePortfolioTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Stocks/ManagePortfolioMenuTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Stocks/ManagePortfolioMenuTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/Stocks/PortfolioTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Stocks/PortfolioTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime_data/h.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime_data/tech.json" beforeDir="false" afterPath="$PROJECT_DIR$/runtime_data/tech.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Stocks/TextViewTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Stocks/TextViewTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Stocks/ViewPortfoliosTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Stocks/ViewPortfoliosTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/DESIGN-README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/DESIGN-README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/javadoc.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime_data/tech.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime_data/tech2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime_data/tech3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime_data/tech5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AlphaVantageAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AlphaVantageAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CalculateGorL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CalculateGorL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClosingPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClosingPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CreatePortfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CreatePortfolio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DirectoryCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DirectoryCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/IPortfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IPortfolio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ManagePortfolioMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManagePortfolioMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MockView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MockView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Moving.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Moving.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Portfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Portfolio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Stock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StockController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ViewPortfolios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewPortfolios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/CreatePortfolioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/CreatePortfolioTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ManagePortfolioMenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ManagePortfolioMenuTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/PortfolioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PortfolioTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TextViewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TextViewTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ViewPortfoliosTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ViewPortfoliosTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +73,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -54,75 +92,95 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.ProgramMainStock.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.PortfolioTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PortfolioTest.testCalculatePortfolioValue.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PortfolioTest.testCalculatePortfolioValueOnDifferentDate.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PortfolioTest.testPrintStocks.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;janet&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Portfolio.executor": "Run",
+    "Application.ProgramMainStock.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.CalculateGorLTest.testGo.executor": "Run",
+    "JUnit.PortfolioOptionsTest.executor": "Debug",
+    "JUnit.PortfolioOptionsTest.testAddStock.executor": "Run",
+    "JUnit.PortfolioOptionsTest.testCalculatePortfolioValue.executor": "Run",
+    "JUnit.PortfolioOptionsTest.testDistributionOfValue.executor": "Run",
+    "JUnit.PortfolioOptionsTest.testPerformanceOverTime.executor": "Run",
+    "JUnit.PortfolioOptionsTest.testPrintStocks.executor": "Run",
+    "JUnit.PortfolioOptionsTest.testQuitOption.executor": "Run",
+    "JUnit.PortfolioOptionsTest.testRebalancePortfolio.executor": "Run",
+    "JUnit.PortfolioOptionsTest.testRemoveStock.executor": "Run",
+    "JUnit.PortfolioTest.executor": "Run",
+    "JUnit.PortfolioTest.testCalculatePortfolioValue.executor": "Run",
+    "JUnit.PortfolioTest.testCalculatePortfolioValueBeforeStockAdded.executor": "Run",
+    "JUnit.PortfolioTest.testCalculatePortfolioValueOnDifferentDate.executor": "Run",
+    "JUnit.PortfolioTest.testPerformanceOverTime.executor": "Run",
+    "JUnit.PortfolioTest.testPerformanceOverTimeMediumSpan.executor": "Run",
+    "JUnit.PortfolioTest.testPerformanceOverTimeShortSpan.executor": "Run",
+    "JUnit.PortfolioTest.testPerformanceOverTimeWithDaysInterval.executor": "Run",
+    "JUnit.PortfolioTest.testPerformanceOverTimeWithMonthsInterval.executor": "Debug",
+    "JUnit.PortfolioTest.testPrintStocks.executor": "Run",
+    "JUnit.PortfolioTest.testRebalanceWithDifferentTargets.executor": "Run",
+    "JUnit.ViewPortfoliosTest.testGo.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "janet",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.PortfolioTest">
-    <configuration name="PortfolioTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+}]]></component>
+  <component name="RunManager">
+    <configuration name="PortfolioOptionsTest.testDistributionOfValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Stocks" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PortfolioTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PortfolioTest.testCalculatePortfolioValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Stocks" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PortfolioTest" />
-      <option name="METHOD_NAME" value="testCalculatePortfolioValue" />
+      <option name="MAIN_CLASS_NAME" value="PortfolioOptionsTest" />
+      <option name="METHOD_NAME" value="testDistributionOfValue" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PortfolioTest.testCalculatePortfolioValueBeforeStockAdded" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PortfolioOptionsTest.testPerformanceOverTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Stocks" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PortfolioTest" />
-      <option name="METHOD_NAME" value="testCalculatePortfolioValueBeforeStockAdded" />
+      <option name="MAIN_CLASS_NAME" value="PortfolioOptionsTest" />
+      <option name="METHOD_NAME" value="testPerformanceOverTime" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PortfolioTest.testCalculatePortfolioValueOnDifferentDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PortfolioOptionsTest.testPrintStocks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Stocks" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PortfolioTest" />
-      <option name="METHOD_NAME" value="testCalculatePortfolioValueOnDifferentDate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PortfolioTest.testPrintStocks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Stocks" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PortfolioTest" />
+      <option name="MAIN_CLASS_NAME" value="PortfolioOptionsTest" />
       <option name="METHOD_NAME" value="testPrintStocks" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PortfolioOptionsTest.testRebalancePortfolio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Stocks" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PortfolioOptionsTest" />
+      <option name="METHOD_NAME" value="testRebalancePortfolio" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PortfolioOptionsTest.testRemoveStock" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Stocks" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PortfolioOptionsTest" />
+      <option name="METHOD_NAME" value="testRemoveStock" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -130,11 +188,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PortfolioTest" />
-        <item itemvalue="JUnit.PortfolioTest.testCalculatePortfolioValueBeforeStockAdded" />
-        <item itemvalue="JUnit.PortfolioTest.testPrintStocks" />
-        <item itemvalue="JUnit.PortfolioTest.testCalculatePortfolioValueOnDifferentDate" />
-        <item itemvalue="JUnit.PortfolioTest.testCalculatePortfolioValue" />
+        <item itemvalue="JUnit.PortfolioOptionsTest.testDistributionOfValue" />
+        <item itemvalue="JUnit.PortfolioOptionsTest.testPerformanceOverTime" />
+        <item itemvalue="JUnit.PortfolioOptionsTest.testPrintStocks" />
+        <item itemvalue="JUnit.PortfolioOptionsTest.testRebalancePortfolio" />
+        <item itemvalue="JUnit.PortfolioOptionsTest.testRemoveStock" />
       </list>
     </recent_temporary>
   </component>
@@ -159,7 +217,7 @@
       <workItem from="1718135131150" duration="484000" />
       <workItem from="1718135620235" duration="3689000" />
       <workItem from="1718139738121" duration="15428000" />
-      <workItem from="1718156561378" duration="1957000" />
+      <workItem from="1718156561378" duration="47553000" />
     </task>
     <servers />
   </component>
@@ -172,10 +230,91 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/CreatePortfolio.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ViewPortfolios.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/StockController.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="1" />
+          <line>74</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ManagePortfolioMenu.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/PortfolioOptionsTest.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home/lib/src.zip!/java.base/sun/security/x509/X509CertImpl.java</url>
+          <line>1079</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/PortfolioOptionsTest.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/PortfolioOptionsTest.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/StockController.java</url>
+          <line>15</line>
+          <properties field="user" class="StockController" />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Portfolio.java</url>
+          <line>204</line>
+          <properties class="Portfolio" method="performanceOverTime">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Portfolio.java</url>
+          <line>284</line>
+          <properties class="Portfolio" method="dateContainsPrice">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Stock.java</url>
+          <line>182</line>
+          <properties class="Stock" method="getClosingPrice">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/test/PortfolioOptionsTest.java</url>
+          <line>46</line>
+          <properties class="PortfolioOptionsTest" method="testCalculatePortfolioValue">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -40,7 +40,7 @@ public class CalculateGorL implements StockInformationCommands {
       LocalDate ed = vd.provideDate(in);
       try {
         vd.writeMessage("\nthe gain or loss of the stock is  --- " +
-                vd.doubleToString(s.calculateGainLoss(sd, ed)));
+                String.format("$%.2f",s.calculateGainLoss(sd, ed)));
         vd.writeMessage("\n(negative numbers are loss of that number "
                 + "and positive numbers are gain of that number )\n");
       } catch (IllegalArgumentException e) {

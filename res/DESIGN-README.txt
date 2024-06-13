@@ -1,6 +1,8 @@
 Design Description
 ===================
-
+** Assignment 5 Changes **
+1. Changed type of stocks from HashMap<IStock, Integer> to
+HashMap<IStock, Treemap<LocalDate, Double>> and deleted datesAdded t
 OVERVIEW
 -----------
 The Stock Portfolio Management System is designed to provide users with a comprehensive tool to manage their stock investments. The system allows users to create and manage portfolios, view detailed stock information, and perform various stock-related calculations. The application aims to simplify the process of tracking and analyzing stock investments, making it accessible to both novice and experienced investors.

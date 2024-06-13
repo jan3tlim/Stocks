@@ -6,7 +6,7 @@ import java.util.Scanner;
  * the previous menu.
  */
 public class ManagePortfolioMenu implements IStockControllerCommands {
-  Client user;
+  StockController user;
   IView v;
   private Scanner in;
   IStockControllerCommands cmd = null;
@@ -18,7 +18,7 @@ public class ManagePortfolioMenu implements IStockControllerCommands {
    * @param in   the scanner for user input
    * @param user the client whose portfolios are being managed
    */
-  public ManagePortfolioMenu(IView v, Scanner in, Client user) {
+  public ManagePortfolioMenu(IView v, Scanner in, StockController user) {
     this.v = v;
     this.user = user;
     this.in = in;
@@ -31,37 +31,44 @@ public class ManagePortfolioMenu implements IStockControllerCommands {
    *
    * @param m the model to operate on
    */
-  @Override
   public void goController(IModel m) {
+
     boolean quit = false;
     while (!quit) {
       v.showManagePortfolioMenu();
       v.goBack();
       String s = in.next();
-      try {
-        switch (s) {
-          case "b":
-            quit = true;
-            break;
-          case "1":
-            cmd = new CreatePortfolio(v, in, user);
-            break;
-          case "2":
-            cmd = new ViewPortfolios(v, in, user);
-            break;
-          default:
-            v.showOptionError();
-            in.next();
-            break;
-        }
-        if (cmd != null) {
-          cmd.goController(m);
-        }
-        user.savePortfolios("runtime_data");
-      } catch (IllegalArgumentException e) {
-        v.writeMessage("Error: " + e.getMessage() + System.lineSeparator());
-      }
+      IStockControllerCommands cmd = null;
+      if (s.equals("b") ){
+        quit = true;
+        // break;
+      }else{
+        try {
+          switch (s) {
+            case "1":
+              cmd = new CreatePortfolio(v, in, user);
+              break;
+            case "2":
+              cmd = new ViewPortfolios(v, in, user);
+              break;
+            default:
+              v.showOptionError();
+              in.next();
+              break;
+          }
+          if (cmd != null ) {
+            cmd.goController(m);
+          }
+        } catch (IllegalArgumentException e) {
+          v.writeMessage("Error: " + e.getMessage() + System.lineSeparator());
+          v.showManagePortfolioMenu();
+          v.goBack();
+        }}
     }
   }
+
+
+
+
 
 }

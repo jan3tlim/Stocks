@@ -1,7 +1,7 @@
 import java.io.File;
 import java.time.LocalDate;
 import java.util.HashMap;
-import java.util.TreeMap;
+import java.util.Scanner;
 
 /**
  * Interface representing a portfolio of stocks.
@@ -14,7 +14,7 @@ public interface IPortfolio {
    * @param quantity    the quantity of the stock to be added
    * @param currentDate the current date
    */
-  void addStock(IStock stock, int quantity, LocalDate currentDate);
+  void addStock(IStock stock, double quantity, LocalDate currentDate);
 
   /**
    * Removes a specified quantity of a stock from the portfolio.
@@ -23,7 +23,7 @@ public interface IPortfolio {
    * @param quantity    the quantity of the stock to be removed
    * @param currentDate the current date
    */
-  void removeStock(IStock stock, int quantity, LocalDate currentDate);
+  void removeStock(IStock stock, double quantity, LocalDate currentDate);
 
   /**
    * Calculates the total value of the portfolio on a certain date.
@@ -45,7 +45,7 @@ public interface IPortfolio {
    *
    * @return the HashMap of stocks in the portfolio
    */
-  HashMap<IStock, Integer> getStocks(LocalDate l);
+  HashMap<IStock, Double> getStocks(LocalDate l);
 
 
   /**
@@ -58,6 +58,8 @@ public interface IPortfolio {
   Double calculateStockValue(IStock s, LocalDate currentDate);
   String printStocks(LocalDate l);
 
+  String distributionOfValueOnDate(LocalDate date);
+  void rebalance(Scanner in, LocalDate date,IView v);
   String performanceOverTime(LocalDate start, LocalDate end);
 
   void savePortfolio(String filename);

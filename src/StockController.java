@@ -1,4 +1,6 @@
 
+import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 /**
@@ -11,6 +13,8 @@ public class StockController implements IStockController {
   final Readable in;
   final Appendable out;
 
+  Client user;
+
   /**
    * Constructs a StockController instance with the specified input and output streams.
    *
@@ -20,6 +24,7 @@ public class StockController implements IStockController {
   StockController(Readable in, Appendable out) {
     this.in = in;
     this.out = out;
+    user = new Client("user");
   }
 
   /**
@@ -39,8 +44,14 @@ public class StockController implements IStockController {
       String dirPath = "runtime_data";
       DirectoryCreator.ensureDirectoryExists(dirPath);
 //      IClient user = new Client("user");
-      Client user = new Client("user");
       user.loadPortfolios(dirPath);
+      try {
+        DirectoryCreator.clearDirectory(Paths.get(dirPath));
+      } catch (IOException e) {
+        System.err.println("Failed to clear directory: " + e.getMessage());
+      }
+
+
       IStockControllerCommands cmd = null;
       vd.welcomeScreen();
       vd.showMainMenu();
@@ -54,7 +65,7 @@ public class StockController implements IStockController {
             cmd = new StockInformation(vd, in);
             break;
           case "2":
-            cmd = new ManagePortfolioMenu(vd, in, user);
+            cmd = new ManagePortfolioMenu(vd, in, this);
             break;
           default:
             vd.showOptionError();
@@ -67,6 +78,15 @@ public class StockController implements IStockController {
         vd.writeMessage("Error: " + e.getMessage() + System.lineSeparator());
       }
     }
+    user.savePortfolios("runtime_data");
+  }
+
+  public void setClient(Client c){
+    user = c;
+  }
+
+  public Client getUser(){
+    return user;
   }
 
 

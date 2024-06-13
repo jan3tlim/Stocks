@@ -45,7 +45,7 @@ public class TextView implements IView {
    */
   @Override
   public void goBack() {
-    messageAppend("\nEnter 'b' to come back to the most recent menu.\n" +
+    messageAppend("\n\nEnter 'b' to come back to the most recent menu.\n" +
             "To quit the program, navigate back to main menu.\n");
   }
 
@@ -122,16 +122,9 @@ public class TextView implements IView {
     messageAppend("\nWhich portfolio would you like to view?\n");
   }
 
-  /**
-   * Displays a specific portfolio for a client.
-   *
-   * @param name The name of the portfolio.
-   * @param c    The client who owns the portfolio.
-   */
   @Override
-  public void showSpecificPortfolio(String name, Client c) {
-    Portfolio p = c.getPortfolios().get(name);
-    messageAppend(p.printStocks(LocalDate.of(2023, 2, 3)));
+  public void showSpecificPortfolio(IPortfolio p, LocalDate l) {
+    messageAppend(p.printStocks(l));
   }
 
   /**
@@ -204,6 +197,18 @@ public class TextView implements IView {
             .map(LocalDate::toString)
             .collect(Collectors.joining(", "));
     messageAppend(result);
+  }
+
+  @Override
+  public void showPortfolioOptions() {
+    messageAppend("\nPortfolio Function Options:\n"
+            + "1. Calculate value of portfolio on a specific date \n"
+            + "2. Purchase Stock on a specific date\n"
+            + "3. Sell Stock on a specific date\n"
+            + "4. Rebalance portfolio on a specific date\n"
+            + "5. Composition of portfolio on a specific date\n"
+            + "6. Performance of portfolio over time chart \n"
+            + "7. The distribution of values on a specific date\n");
   }
 
   /**

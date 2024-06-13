@@ -2,7 +2,9 @@ import java.time.LocalDate;
 import java.util.TreeMap;
 
 /**
- * Interface representing model.
+ * Interface for creating and managing stock market models.
+ * This interface provides methods to create stock objects with historical data
+ * and to instantiate client profiles for portfolio management.
  */
 public interface IModel {
 

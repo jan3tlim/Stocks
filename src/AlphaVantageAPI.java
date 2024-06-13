@@ -16,7 +16,7 @@ import java.util.TreeMap;
  * It includes functionality for creating CSV files of stock data, converting tickers to lists,
  * and retrieving historical stock prices.
  */
-public class AlphaVantageAPI {
+public class AlphaVantageAPI implements  APIInterface{
   public final String API_KEY = "WMDORK6BEVBQ7K7S";
 
   /**
@@ -27,7 +27,7 @@ public class AlphaVantageAPI {
    * @return a URL object pointing to the Alpha Vantage API endpoint for the given function and
    *                  stock symbol
    */
-  private URL urlMaker(String function, String stockSymbol) {
+  public URL urlMaker(String function, String stockSymbol) {
     URL url = null;
     try {
       url = new URL("https://www.alphavantage"
@@ -42,7 +42,12 @@ public class AlphaVantageAPI {
     return url;
   }
 
-  private String returnData(URL url) {
+  /**
+   * used to return the dat in the provided url and tells if there id no data.
+   * @param url the url to extract information from.
+   * @return the string form of the data.
+   */
+  public String returnData(URL url) {
     InputStream in = null;
     StringBuilder output = new StringBuilder();
 

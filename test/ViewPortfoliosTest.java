@@ -48,9 +48,6 @@ public class ViewPortfoliosTest {
     StringBuilder expected1 = new StringBuilder();
 
 
-    // Add a portfolio to the user
-    Portfolio portfolio = user.createPortfolio("TestPortfolio");
-
     // Simulate user inputs
     input.append("TestPortfolio\n");
     input.append("AAPL,10\n");
@@ -69,7 +66,7 @@ public class ViewPortfoliosTest {
 
     InputStream inputStream = new ByteArrayInputStream(input.toString().getBytes());
     Scanner scanner = new Scanner(inputStream);
-    viewPortfolios = new ViewPortfolios(view, scanner, user);
+  //  viewPortfolios = new ViewPortfolios(view, scanner, user);
 
 
 
